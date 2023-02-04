@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Inicial</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        function sortear(){
+
+            let quantidadePessoas = document
+                .getElementById("inputQuantidadePessoas").value;
+
+            console.log(quantidadePessoas)
+
+            if(quantidadePessoas == null ||
+               quantidadePessoas == 0 ||
+               quantidadePessoas == undefined){
+                
+                alert("Escolha a quantidade de participantes")
+                return;
+               }
+
+            let numeroSorteado = Math.round(Math.random() * quantidadePessoas); 
+
+            document.getElementById("numero").innerText = numeroSorteado;
+            console.log(document.getElementById("numero").innerText)
+        }
+    </script>
+
+</head>
+ 
+<body>
+
+    <label style="margin-right: 2%; text-decoration-line: underline;">Quantidade de participantes*:</label>
+    <input id="inputQuantidadePessoas" type="number" style="border-color: red;">
+
+    <h1 id="numero">Número sorteado</h1>
+
+    <button onclick="sortear()"> Sortear</button>
+</body>
+
+</html>
